@@ -5,24 +5,21 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Kotak Saran</title>
+  <title>Kotak Sakecur</title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<script src="js/jquery-3.2.1.js"></script>
-	<script src="js/popper.js"></script>
-	<script src="js/bootstrap.js"></script>
-  <script defer src="js/fontawesome-all.js"></script>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
 
 <!-- NavBar -->
 <div class="position-relative">
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img src="image/bootstrap-solid.svg" width="30" height="30" alt="">
-      Bootstrap
+  <nav class="navbar fixed-top navbar-expand-lg navbar-inverse navbar-light">
+    <a class="navbar-brand" href="#beranda">
+      <img src="image/logo.svg" width="30" height="30" alt="">
+      Kotak Sakecur
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,19 +28,19 @@ session_start();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#beranda">Beranda <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Kilas</a>
+          <a class="nav-link" href="#kilas">Kilas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Program
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Kotak Saran</a>
-            <a class="dropdown-item" href="#">Kotak Keluhan</a>
-            <a class="dropdown-item" href="#">Kotak Curhat</a>
+            <a class="dropdown-item" href="#p1">Kotak Saran</a>
+            <a class="dropdown-item" href="#p2">Kotak Keluhan</a>
+            <a class="dropdown-item" href="#p3">Kotak Curhat</a>
           </div>
         </li>
         <li class="nav-item">
@@ -55,13 +52,8 @@ session_start();
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-3">
-          <span class="fa-layers fa-fw fa-2x">
-            <i class="fas fa-envelope"></i>
-            <span class="fa-layers-counter fa-lg">1</span>
-          </span>
         </li>
         <li class="nav-item">
-          <i class="fas fa-user fa-2x"></i>
         </li>
       </ul>
     </div>
@@ -69,12 +61,83 @@ session_start();
 </div>
 
 <!-- Landing Page (ada text box) -->
-<div class="container pt-2">
-  <form autocomplete="off" class="form-inline" onsubmit="return false">
-    <input type="text" class="form-control mr-2 mb-2" placeholder="NIS" name="nis" maxlength="9" id="inputnis" />
-    <button class="btn btn-light mb-2" name="kirim" onclick="kirimnis(inputnis.value)">Kirim</button>
-  </form>
+<div class="sesuatu" id="beranda">
+<header class="text-center">
+  <div class="container">
+    <div class="bekron"></div>
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Masukkan NIS mu disini!</h1>
+      </div>
+      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        <form autocomplete="off" onsubmit="return false">
+          <div class="form-row">
+            <div class="col-12 col-md-9 mb-2 mb-md-0">
+              <input type="text" class="form-control form-control-lg" placeholder="Masukan NIS Anda" name="nis" maxlength="9" id="inputnis" />
+            </div>
+            <div class="col-12 col-md-3">
+              <button class="btn btn-block btn-lg btn-dark" name="kirim" onclick="kirimnis(inputnis.value)">Kirim</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
 </div>
+
+<!-- Bagian penjelasan -->
+<div class="container paddingcustom" id="kilas">
+  <blockquote class="blockquote text-center">
+    <h2>Kotak Sakecur</h2>
+    <p>Kotak Sakecur adalah kotak yang dimana dapat mengisi berupa saran, keluhan dan curhat. Kotak Sakecur ini dapat diisi oleh seluruh warga STM yang memiliki keluhan, aspirasi kedepannya untuk sekolah bahkan yang membutuhkan saran untuk masalahnya. Kotak Sakecur ini akan dilihat dan dibalas oleh Kepala Sekolah, Guru BK serta Guru yang bersangkutan. </p>
+  </blockquote>
+</div>
+
+<!-- Bagian Program -->
+<section class="text-center paddingcustom" id="p1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="d-flex mb-3">
+            <img src="image/saran.svg" alt="Coba" class="img-fluid mx-auto">
+          </div>
+          <h3>Kotak Saran</h3>
+          <p class="lead mb-0" id="p2">Yang berupa saran infrastruktur, masukan bagi para Guru bahkan Kepala Sekolah</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="d-flex mb-3">
+            <img src="image/keluhan.svg" alt="Coba" class="img-fluid mx-auto">
+          </div>
+          <h3>Kotak Keluhan</h3>
+          <p class="lead mb-0" id="p3">Yang berupa keluhan warga STM selama belajar di SMKN 1 Cimahi dan keluhan-keluhan lainnya seperti peraturan sekolah, peraturan keputrian, hukuman keterlambatan</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="mx-auto mb-0 mb-lg-3">
+          <div class="d-flex mb-3">
+            <img src="image/curhat.svg" alt="Coba" class="img-fluid mx-auto">
+          </div>
+          <h3>Kotak Curhat</h3>
+          <p class="lead mb-0">Yang berupa curhatan para warga STM tentang apapun itu, karena Kotak Curhat disini mencakup luas bahasannya</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bagian Statistik -->
+<section class="paddingcustom text-center">
+  <div class="container">
+    <div class="col-lg-6 mx-auto">
+      <canvas id="chart" width="600" height="400"></canvas>
+      <h5 class="pt-3">Statistik penggunaan web Kotak Sakecur</h5>
+    </div>
+  </div>
+</section>
 
 <!-- Modal -->
 <div class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -127,24 +190,28 @@ session_start();
 </div>
 
 <!-- Modal2 -->
-<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-sm" id="modal2" tabindex="-1" role="dialog" aria-labelledby="judulmodal2" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="judulmodal2"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btutup">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
         <div class="modal-body">
-          <p id="isimodal"></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          <p id="isimodal2"></p>
         </div>
     </div>
   </div>
 </div>
 </body>
+
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/typed.js"></script>
 <script src="js/index.js"></script>
+
 </html>

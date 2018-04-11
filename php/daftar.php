@@ -1,4 +1,6 @@
 <?php
+require '../include/koneksi.php';
+
 // Escape all $_POST variables to protect against SQL injections
 $nis = $mysqli->escape_string($_GET['nis']);
 $email = $mysqli->escape_string($_GET['email']);

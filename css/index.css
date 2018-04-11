@@ -1,0 +1,18 @@
+.sesuatu {
+	position: relative;
+	padding-top: 40vh;
+	padding-bottom: 45vh;
+}
+
+.bekron {
+	position: 
+	background-image: url("../image/bekron.png");
+	background-size: cover;
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+
+.paddingcustom {
+	padding-top: 20vh;
+	padding-bottom: 20vh;
+}

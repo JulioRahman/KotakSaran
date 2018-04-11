@@ -5,8 +5,7 @@ if(isset($_GET['nis']) AND !empty($_GET['nis'])){
 
   $resultsiswa = $mysqli->query("SELECT * FROM t_siswa WHERE nis='$nis'");
   if ($resultsiswa->num_rows == 0){
-    $pop = "tidak";
-    echo $pop;
+    echo "tidak";
   } else {
     $siswa = $resultsiswa->fetch_assoc();
     $resultpengguna = $mysqli->query("SELECT * FROM t_pengguna WHERE nis='$nis'");
@@ -16,8 +15,7 @@ if(isset($_GET['nis']) AND !empty($_GET['nis'])){
       $nama = $siswa['nama'];
       echo $pop.$jk.$nama;
     } else {
-      $pop = "masuk";
-      echo $pop;
+      echo "masuk";
     }
   }
 }

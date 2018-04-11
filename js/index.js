@@ -1,9 +1,5 @@
-$(function () {
-  $('[data-toggle="popover"]').popover();
-});
-
+// fungsi nge-cek nis pake AJAX
 function kirimnis(str) {
-  $('#email').popover('hide');
   if (str.length > 0) {
     if (window.XMLHttpRequest) {
       // kode untuk IE7+, Firefox, Chrome, Opera, Safari
@@ -59,7 +55,7 @@ function kirimnis(str) {
             document.getElementById("rbp").checked = "true";
           }
 
-          document.getElementById("tombolsubmit").onclick = "cekemail(nis.value)";
+          document.getElementById("tombolsubmit").onclick = function() {cekemail(str)};
         }
         $('#modallogin').modal('show');
       }
@@ -69,6 +65,7 @@ function kirimnis(str) {
   }
 }
 
+//fungsi nge-cek email pake AJAX
 function cekemail(str) {
   if (str.length > 0) {
     if (window.XMLHttpRequest) {
@@ -81,14 +78,43 @@ function cekemail(str) {
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         if (this.responseText == "ada") {
-          $('#email').popover('show');
+          document.getElementById("judulmodal2").innerHTML = "Peringatan!";
+          document.getElementById("isimodal2").innerHTML = "Email yang anda masukan sudah terpakai, silakan masukan email lain";
         } else if (this.responseText == "berhasil") {
-          $('#modallogin').modal('hide');
-          kirimnis(str);
+          document.getElementById("judulmodal2").innerHTML = "Pemberitahuan!";
+          document.getElementById("isimodal2").innerHTML = "Pendaftaran berhasil, silakan login";
+
+          document.getElementById("btutup").onclick = function() {$('#modallogin').modal('hide')};
         }
+        $('#modal2').modal('show');
       }
     }
-    xmlhttp.open("GET", "php/daftar.php?nis="+str+"+email="+document.getElementById("nis").value+"+katasandi="+document.getElementById("katasandi").value, true);
+    xmlhttp.open("GET", "php/daftar.php?nis="+str+"&email="+document.getElementById("email").value+"&katasandi="+document.getElementById("katasandi").value, true);
     xmlhttp.send();
   }
 }
+
+// statistik pake chart.js -----------------
+var ctx = document.getElementById("chart");
+
+var data = {
+  datasets: [{
+    data: [1, 1, 1],
+    backgroundColor: [
+      '#00b8ff',
+      '#9600ff',
+      '#ff00c1'
+    ]
+  }],
+
+  labels: [
+    'Saran',
+    'Keluhan',
+    'Curhat'
+  ]
+};
+
+var chart = new Chart(ctx,{
+  type: 'pie',
+  data: data
+});
