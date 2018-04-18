@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 10812 11648"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#FEFEFE;stroke-width:48.284}
+    .fil3 {fill:#8B8B8C}
+    .fil8 {fill:#646363}
+    .fil4 {fill:#D2CDE6}
+    .fil2 {fill:#7C6FB0}
+    .fil6 {fill:#4CCDFF}
+    .fil5 {fill:#66D4FF}
+    .fil7 {fill:#7FDBFF}
+    .fil10 {fill:#B54CFF}
+    .fil9 {fill:#C066FF}
+    .fil11 {fill:#CA7FFF}
+    .fil13 {fill:#FF4CD2}
+    .fil12 {fill:#FF66D9}
+    .fil14 {fill:#FF7FE0}
+    .fil1 {fill:url(#id1)}
+    .fil0 {fill:url(#id2)}
+   ]]>
+  </style>
+    <clipPath id="id0">
+     <path d="M0 4654l10812 0 0 6994 -10812 0 0 -6994z"/>
+    </clipPath>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="4273.44" y1="1976.13" x2="7597.46" y2="6977.84">
+   <stop offset="0" style="stop-opacity:1; stop-color:#E6E5F2"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:white"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="9892.92" y1="6874.38" x2="563.783" y2="8367.65">
+   <stop offset="0" style="stop-opacity:1; stop-color:#7FDBFF"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#E74893"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_165312020768">
+   <g style="clip-path:url(#id0)">
+    <image x="0" y="4654" width="10812" height="6994" xlink:href="isometric2_Images\isometric2_ImgID1.png"/>
+   </g>
+  </g>
+  <path class="fil0" d="M10178 7488l-3581 2822c-498,392 -1364,454 -1824,197l-3985 -2225c-900,-502 -439,-1165 93,-1510l3120 -2021c415,-310 339,-199 1278,336l4899 2401z"/>
+  <polygon class="fil1" points="3630,0 8241,2381 8241,8954 3630,6573 "/>
+  <g id="_165312020032">
+   <polygon class="fil2" points="3645,6288 2549,5649 2547,6901 3644,7539 "/>
+   <polygon class="fil3" points="3645,7539 3645,6288 4741,5676 4742,6927 "/>
+   <polygon class="fil4" points="3645,6288 4741,5676 3644,5037 2549,5649 "/>
+   <polygon class="fil5" points="3645,6288 2549,5649 2547,6901 3644,7539 "/>
+   <polygon class="fil6" points="3645,7539 3645,6288 4741,5676 4742,6927 "/>
+   <polygon class="fil7" points="3645,6288 4741,5676 3644,5037 2549,5649 "/>
+   <polygon class="fil8 str0" points="3334,5452 3235,5502 3853,5867 3955,5811 "/>
+  </g>
+  <g id="_165313341600">
+   <polygon class="fil2" points="5051,7091 3954,6452 3953,7703 5050,8342 "/>
+   <polygon class="fil3" points="5051,8342 5051,7091 6146,6478 6148,7729 "/>
+   <polygon class="fil4" points="5051,7091 6146,6478 5050,5840 3954,6452 "/>
+   <polygon class="fil9" points="5051,7091 3954,6452 3953,7703 5050,8342 "/>
+   <polygon class="fil10" points="5051,8342 5051,7091 6146,6478 6148,7729 "/>
+   <polygon class="fil11" points="5051,7091 6146,6478 5050,5840 3954,6452 "/>
+   <polygon class="fil8 str0" points="4739,6255 4641,6305 5259,6670 5361,6614 "/>
+  </g>
+  <g id="_165313336384">
+   <polygon class="fil2" points="6484,7896 5388,7257 5387,8508 6483,9147 "/>
+   <polygon class="fil3" points="6484,9147 6484,7896 7580,7283 7581,8534 "/>
+   <polygon class="fil4" points="6484,7896 7580,7283 6483,6644 5388,7257 "/>
+   <polygon class="fil12" points="6484,7896 5388,7257 5387,8508 6483,9147 "/>
+   <polygon class="fil13" points="6484,9147 6484,7896 7580,7283 7581,8534 "/>
+   <polygon class="fil14" points="6484,7896 7580,7283 6483,6644 5388,7257 "/>
+   <polygon class="fil8 str0" points="6173,7060 6074,7109 6692,7475 6795,7419 "/>
+  </g>
+ </g>
+</svg>

@@ -7,7 +7,7 @@ session_start();
 <head>
   <title>Kotak Sakecur</title>
 	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
@@ -16,7 +16,7 @@ session_start();
 
 <!-- NavBar -->
 <div class="position-relative">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-inverse navbar-light">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-inverse navbar-light justify-content-between">
     <a class="navbar-brand" href="#beranda">
       <img src="image/logo.svg" width="30" height="30" alt="">
       Kotak Sakecur
@@ -26,7 +26,7 @@ session_start();
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ml-auto mr-5">
         <li class="nav-item active">
           <a class="nav-link" href="#beranda">Beranda <span class="sr-only">(current)</span></a>
         </li>
@@ -50,30 +50,28 @@ session_start();
           <a class="nav-link" href="#">Solusi</a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item mr-3">
-        </li>
-        <li class="nav-item">
-        </li>
-      </ul>
     </div>
   </nav>
 </div>
 
 <!-- Landing Page (ada text box) -->
+<div class="">
+  <div class="bekron col-lg-7">
+    <img class="boxsvg" src="image/box.svg" width="45%">
+  </div>
+</div>
 <div class="sesuatu" id="beranda">
 <header class="text-center">
   <div class="container">
-    <div class="bekron"></div>
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <h1 class="mb-5">Masukkan NIS mu disini!</h1>
+    <div class="row col-md-6 mx-auto mx-md-0">
+      <div class="col-md-12">
+        <h3><span id="ngetik1"></span></h3>
       </div>
-      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+      <div class="col-md-12">
         <form autocomplete="off" onsubmit="return false">
           <div class="form-row">
             <div class="col-12 col-md-9 mb-2 mb-md-0">
-              <input type="text" class="form-control form-control-lg" placeholder="Masukan NIS Anda" name="nis" maxlength="9" id="inputnis" />
+              <input type="text" class="form-control form-control-lg" placeholder="Masukkan NIS Anda" name="nis" maxlength="9" id="inputnis" />
             </div>
             <div class="col-12 col-md-3">
               <button class="btn btn-block btn-lg btn-dark" name="kirim" onclick="kirimnis(inputnis.value)">Kirim</button>
@@ -210,8 +208,8 @@ session_start();
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="js/chart.js"></script>
 <script src="js/typed.js"></script>
+<script src="js/chart.js"></script>
 <script src="js/index.js"></script>
 
 </html>

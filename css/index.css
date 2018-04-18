@@ -5,11 +5,17 @@
 }
 
 .bekron {
-	position: 
+	position: absolute;
+	height: 100%;
+	right: 0;
 	background-image: url("../image/bekron.png");
 	background-size: cover;
-	background-position: top right;
 	background-repeat: no-repeat;
+}
+
+.boxsvg {
+	margin-top: 20vh;
+	margin-left: 32vh;
 }
 
 .paddingcustom {

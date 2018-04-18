@@ -1,3 +1,12 @@
+//NavBar ganti warna
+/*
+$(function () {
+  $(document).scroll(function () ) {
+    var $nav =  
+  }
+})
+*/
+
 // fungsi nge-cek nis pake AJAX
 function kirimnis(str) {
   if (str.length > 0) {
@@ -13,7 +22,7 @@ function kirimnis(str) {
         if (this.responseText == "tidak") {
           document.getElementById("exampleModalLongTitle").innerHTML = "Peringatan!";
           document.getElementById("tombolsubmit").style.display = "none";
-          document.getElementById("isimodal").innerHTML = "NIS yang anda masukan tidak terdaftar atau salah!";
+          document.getElementById("isimodal").innerHTML = "NIS yang anda masukkan tidak terdaftar atau salah!";
           document.getElementById("isimodal").style.display = "inline";
           document.getElementById("fgtidak").style.display = "none";
         } else if (this.responseText == "masuk") {
@@ -31,6 +40,8 @@ function kirimnis(str) {
           document.getElementById("fgnislogin").style.display = "block";
 
           document.getElementById("nislogin").value = str;
+
+          document.getElementById("tombolsubmit").onclick = function() {login(str)};
         } else if (this.responseText.substr(0,1) == "d") {
           document.getElementById("exampleModalLongTitle").innerHTML = "Daftar";
           document.getElementById("tombolsubmit").style.display = "inline";
@@ -79,17 +90,50 @@ function cekemail(str) {
       if (this.readyState == 4 && this.status == 200) {
         if (this.responseText == "ada") {
           document.getElementById("judulmodal2").innerHTML = "Peringatan!";
-          document.getElementById("isimodal2").innerHTML = "Email yang anda masukan sudah terpakai, silakan masukan email lain";
+          document.getElementById("isimodal2").innerHTML = "Email yang anda masukkan sudah terpakai, silakan masukkan email lain";
         } else if (this.responseText == "berhasil") {
           document.getElementById("judulmodal2").innerHTML = "Pemberitahuan!";
           document.getElementById("isimodal2").innerHTML = "Pendaftaran berhasil, silakan login";
 
-          document.getElementById("btutup").onclick = function() {$('#modallogin').modal('hide')};
+          document.getElementById("btutup").onclick = function() {
+            $('#modallogin').modal('hide')
+          };
         }
         $('#modal2').modal('show');
       }
     }
     xmlhttp.open("GET", "php/daftar.php?nis="+str+"&email="+document.getElementById("email").value+"&katasandi="+document.getElementById("katasandi").value, true);
+    xmlhttp.send();
+  }
+}
+
+//fungsi login pake AJAX
+function login(str) {
+  if (str.length > 0) {
+    if (window.XMLHttpRequest) {
+      // kode untuk IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp = new XMLHttpRequest();
+    } else { 
+      // kode untuk IE6, IE5
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        if (this.responseText == "gagal") {
+          document.getElementById("judulmodal2").innerHTML = "Peringatan!";
+          document.getElementById("isimodal2").innerHTML = "Kata Sandi yang Anda masukkan salah!";
+        } else if (this.responseText == "berhasil") {
+          document.getElementById("judulmodal2").innerHTML = "Pemberitahuan!";
+          document.getElementById("isimodal2").innerHTML = "Anda berhasil masuk";
+
+          document.getElementById("btutup").onclick = function() {
+            $('#modallogin').modal('hide')
+          };
+        }
+        $('#modal2').modal('show');
+      }
+    }
+    xmlhttp.open("GET", "php/login.php?nis="+str+"&katasandi="+document.getElementById("katasandi").value, true);
     xmlhttp.send();
   }
 }
@@ -118,3 +162,22 @@ var chart = new Chart(ctx,{
   type: 'pie',
   data: data
 });
+
+// animasi ngetik pake typed.js -----------------
+var typed = new Typed('#ngetik1', {
+    strings: ['Salam Teuka, berbagilah pendapatmu disini!',
+              'Jangan dibiarkan, berat! biar kamu saja yang menuliskan',
+              'Keluhan itu perlu disampaikan. Jangan takut!',
+              'Ingin berbagi saran agar sekolah lebih baik? Yuk tulisin aja',
+              'Punya masalah? Curhatin aja disini',
+              'Sekolah keren karena siswanya terbuka',
+              'Ayo .. Ayo, Wonderful Sakecur. Please, Write it down!',
+              'Kreativitas membutuhkan keberanian untuk melepaskan kepastian'],
+    typeSpeed: 80,
+    backSpeed: 30,
+    backDelay: 1000,
+    cursorChar: '.',
+    //showCursor: false,
+    smartBackspace: true,
+    loop: true
+  });
