@@ -1,11 +1,27 @@
 //NavBar ganti warna
-/*
-$(function () {
-  $(document).scroll(function () ) {
-    var $nav =  
-  }
+var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+$(document).ready(function(){
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if (scroll > 100) {
+      $(".navbar").css("background-color", "#f8f9fa");
+      $(".navbar").css("transition", "0.3s");
+      $(".navbar-brand").removeClass("logo");
+      $(".napigasi").removeClass("navigasi");
+      //$(".navbar-nav").css("color", "#212529");
+    } else {
+      if (w <= 768) {
+        $(".navbar").css("background-color", "#f8f9fa");
+      } else if (w > 768) {
+        $(".navbar").css("background-color", "transparent");
+        $(".navbar-brand").addClass("logo");
+        $(".napigasi").addClass("navigasi");
+      }
+      //$(".navbar-nav").css("color", "#f8f9fa");
+    }
+  })
 })
-*/
 
 // fungsi nge-cek nis pake AJAX
 function kirimnis(str) {
@@ -56,6 +72,7 @@ function kirimnis(str) {
           document.getElementById("fgemail").style.display =
           "block";
           document.getElementById("fgnislogin").style.display = "none";
+          //document.getElementById("emailHelp").display = "none";
 
           document.getElementById("nis").value = str;
           document.getElementById("nama").value = this.responseText.slice(2);          
@@ -87,6 +104,25 @@ function cekemail(str) {
       xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.onreadystatechange = function() {
+      /*
+      if (this.readyState == 4 && this.status == 200) {
+        if (this.responseText == "ada") {
+          document.getElementById("emailHelp").innerHTML = "Email yang anda masukkan sudah terpakai, silakan masukkan email lain";
+          document.getElementById("emailHelp").display = "block";
+          document.getElementById("email").onclick = function() {
+            document.getElementById("emailHelp").display = "none"
+          };
+        } else if (this.responseText == "berhasil") {
+          document.getElementById("judulmodal2").innerHTML = "Pemberitahuan!";
+          document.getElementById("isimodal2").innerHTML = "Pendaftaran berhasil, silakan login";
+          $('#modal2').modal('show');
+          document.getElementById("btutup").onclick = function() {
+            $('#modallogin').modal('hide')
+          };
+        }
+      }
+      */
+      ///*
       if (this.readyState == 4 && this.status == 200) {
         if (this.responseText == "ada") {
           document.getElementById("judulmodal2").innerHTML = "Peringatan!";
@@ -101,6 +137,7 @@ function cekemail(str) {
         }
         $('#modal2').modal('show');
       }
+      //*/
     }
     xmlhttp.open("GET", "php/daftar.php?nis="+str+"&email="+document.getElementById("email").value+"&katasandi="+document.getElementById("katasandi").value, true);
     xmlhttp.send();
@@ -131,11 +168,18 @@ function login(str) {
           };
         }
         $('#modal2').modal('show');
+        document.getElementById("udahlogin").display = "block";
       }
     }
     xmlhttp.open("GET", "php/login.php?nis="+str+"&katasandi="+document.getElementById("katasandi").value, true);
     xmlhttp.send();
   }
+}
+
+function udahlogin() {
+  document.getElementById("judulmodal2").innerHTML = "Peringatan!";
+  document.getElementById("isimodal2").innerHTML = "Anda sudah login!";
+  $('#modal2').modal('show');
 }
 
 // statistik pake chart.js -----------------
@@ -165,19 +209,19 @@ var chart = new Chart(ctx,{
 
 // animasi ngetik pake typed.js -----------------
 var typed = new Typed('#ngetik1', {
-    strings: ['Salam Teuka, berbagilah pendapatmu disini!',
-              'Jangan dibiarkan, berat! biar kamu saja yang menuliskan',
-              'Keluhan itu perlu disampaikan. Jangan takut!',
-              'Ingin berbagi saran agar sekolah lebih baik? Yuk tulisin aja',
-              'Punya masalah? Curhatin aja disini',
-              'Sekolah keren karena siswanya terbuka',
-              'Ayo .. Ayo, Wonderful Sakecur. Please, Write it down!',
-              'Kreativitas membutuhkan keberanian untuk melepaskan kepastian'],
-    typeSpeed: 80,
-    backSpeed: 30,
-    backDelay: 1000,
-    cursorChar: '.',
-    //showCursor: false,
-    smartBackspace: true,
-    loop: true
-  });
+  strings: ['Salam Teuka^300,<br>berbagilah pendapatmu disini!',
+            'Ingin berbagi saran agar sekolah<br>lebih baik?^500 `Yuk tulisin aja`',
+            'Keluhan itu perlu disampaikan^500.<br>`Jangan takut!`',
+            'Punya masalah?^500 `Curhatin aja disini`',
+            'Jangan dibiarkan, berat!^300.<br>Biar kamu saja yang menuliskan',
+            'Sekolah keren karena siswanya terbuka',
+            'Ayo .. Ayo, Wonderful Sakecur^300.<br>Please, Write it down!',
+            'Kreativitas membutuhkan keberanian untuk melepaskan kepastian'],
+  typeSpeed: 80,
+  backSpeed: 10,
+  backDelay: 1500,
+  //cursorChar: '.',
+  showCursor: false,
+  smartBackspace: true,
+  loop: true
+});

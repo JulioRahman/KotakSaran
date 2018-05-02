@@ -13,12 +13,37 @@
 	background-repeat: no-repeat;
 }
 
-.boxsvg {
-	margin-top: 20vh;
-	margin-left: 32vh;
-}
-
 .paddingcustom {
 	padding-top: 20vh;
 	padding-bottom: 20vh;
+}
+
+@media (max-width: 768px) {
+	.boxsvg {
+		margin-top: 11vh;
+		margin-left: 15vh;
+	}
+
+	.textbox {
+		padding-top: 22vh;
+	}
+}
+
+@media (min-width: 768px) {
+	.boxsvg {
+		margin-top: 20vh;
+		margin-left: 32vh;
+	}
+
+	.navigasi {
+		padding-left: 60vh;
+	}
+
+	.textbox {
+		padding-top: 11vh;
+	}
+
+	.logo {
+		padding-left: 23vh;
+	}
 }

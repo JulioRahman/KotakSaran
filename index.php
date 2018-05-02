@@ -16,8 +16,8 @@ session_start();
 
 <!-- NavBar -->
 <div class="position-relative">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-inverse navbar-light justify-content-between">
-    <a class="navbar-brand" href="#beranda">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <a class="navbar-brand logo" href="#beranda">
       <img src="image/logo.svg" width="30" height="30" alt="">
       Kotak Sakecur
     </a>
@@ -26,7 +26,7 @@ session_start();
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto mr-5">
+      <ul class="navbar-nav napigasi navigasi">
         <li class="nav-item active">
           <a class="nav-link" href="#beranda">Beranda <span class="sr-only">(current)</span></a>
         </li>
@@ -50,6 +50,11 @@ session_start();
           <a class="nav-link" href="#">Solusi</a>
         </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" id="udahlogin" style="display: none;">
+          <a class="nav-link" href="#"><i data-feather="user"></i></a>
+        </li>
+      </ul>
     </div>
   </nav>
 </div>
@@ -63,18 +68,28 @@ session_start();
 <div class="sesuatu" id="beranda">
 <header class="text-center">
   <div class="container">
-    <div class="row col-md-6 mx-auto mx-md-0">
-      <div class="col-md-12">
+    <div class="row col-lg-6 mx-auto mx-lg-0">
+      <div class="col-lg-12 position-absolute">
         <h3><span id="ngetik1"></span></h3>
       </div>
-      <div class="col-md-12">
+      <div class="col-lg-12 position-absolute textbox">
         <form autocomplete="off" onsubmit="return false">
           <div class="form-row">
-            <div class="col-12 col-md-9 mb-2 mb-md-0">
+            <div class="col-12 col-md-10 mb-2 mb-lg-0">
               <input type="text" class="form-control form-control-lg" placeholder="Masukkan NIS Anda" name="nis" maxlength="9" id="inputnis" />
             </div>
-            <div class="col-12 col-md-3">
-              <button class="btn btn-block btn-lg btn-dark" name="kirim" onclick="kirimnis(inputnis.value)">Kirim</button>
+            <div class="col-12 col-md-2">
+              <button class="btn btn-block btn-light btn-inverse" name="kirim" onclick="kirimnis(inputnis.value)"
+              <?php /*
+                if (isset($_SESSION['aktif'])) {
+                  if ($_SESSION['aktif']) {
+                    echo "onclick='udahlogin()'";
+                  } else {
+                    echo "onclick='kirimnis(inputnis.value)'";
+                  }
+                }
+              */ ?>
+              ><i data-feather="log-in" class="mt-1"></i></button>
             </div>
           </div>
         </form>
@@ -167,6 +182,7 @@ session_start();
             <div class="form-group" id="fgemail">
               <label for="email">Email</label>
               <input type="email" class="form-control" required autocomplete="off" name="email" id="email" />
+              <!-- <small id="emailHelp" class="form-text text-danger">Email yang Anda masukkan sudah terpakai</small> -->
             </div>
             <div class="form-group" id="fgnislogin">
               <label for="nislogin">NIS</label>
@@ -208,6 +224,10 @@ session_start();
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/feather.js"></script>
+<script>
+  feather.replace()
+</script>
 <script src="js/typed.js"></script>
 <script src="js/chart.js"></script>
 <script src="js/index.js"></script>

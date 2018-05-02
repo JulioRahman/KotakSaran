@@ -10,6 +10,7 @@ $user = $result->fetch_assoc();
 if ( password_verify($_GET['katasandi'], $user['katasandi']) ) {
     
     $_SESSION['nis'] = $user['nis'];
+    $_SESSION['aktif'] = true;
     
     // This is how we'll know the user is logged in
     echo "berhasil";
